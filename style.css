@@ -1,3 +1,8 @@
+/* ==========================================================================
+   VARIABLES Y FUENTES (Tu Paleta Red Supremacy)
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&display=swap');
+
 :root {
     --primary-red: #ff0000;
     --dark-red: #660000;
@@ -6,155 +11,173 @@
     --neon-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
 }
 
-body {
+/* ==========================================================================
+   RESET Y CONFIGURACIÓN BASE
+   ========================================================================== */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
     background: radial-gradient(circle, #3a0000 0%, #0d0000 100%);
     color: #fff;
     font-family: 'Rajdhani', sans-serif;
     line-height: 1.6;
     min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-h1, h2, h3, .nav-link {
+/* Aplicando Orbitron a los textos principales con tracking cyberpunk */
+h1, h2, h3, .card-link span {
     font-family: 'Orbitron', sans-serif;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
-/* Header & Nav */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 5%;
-    background: rgba(0, 0, 0, 0.8);
-    border-bottom: 2px solid var(--primary-red);
-    box-shadow: var(--neon-shadow);
-}
-
-.logo h1 {
-    color: var(--primary-red);
-    margin: 0;
-    text-shadow: 2px 2px 10px rgba(255, 0, 0, 0.5);
-}
-
-nav a {
-    color: #fff;
-    text-decoration: none;
-    margin-left: 20px;
-    transition: 0.3s;
-    font-weight: bold;
-}
-
-nav a:hover, nav a.active {
-    color: var(--primary-red);
-    text-shadow: 0 0 8px var(--primary-red);
-}
-
-.shop-btn {
-    background: #000;
-    padding: 10px 20px;
-    border: 1px solid var(--primary-red);
-    border-radius: 4px;
-    box-shadow: inset 0 0 5px var(--primary-red);
-}
-
-.shop-btn:hover {
-    background: var(--primary-red);
-    color: #000 !important;
-    box-shadow: 0 0 20px var(--primary-red);
-}
-
-/* Container */
+/* ==========================================================================
+   CONTENEDOR CENTRAL / BUNKER TARJETA
+   ========================================================================== */
 .container {
-    max-width: 900px;
-    margin: 60px auto;
-    padding: 20px;
-}
-
-/* Hero & Status Section */
-.hero {
+    width: 100%;
+    max-width: 460px;
     background: var(--card-bg);
-    padding: 40px;
+    padding: 45px 35px;
     border-radius: 15px;
     border: 1px solid var(--dark-red);
     text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7), inset 0 0 15px rgba(102, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
 }
 
-.hero h2 {
-    color: var(--primary-red);
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+/* Línea de acento estilo HUD en el lateral izquierdo */
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--primary-red);
+    box-shadow: var(--neon-shadow);
 }
 
-.ip-box {
+/* ==========================================================================
+   AVATAR E IDENTIDAD (Blade Dimension Style)
+   ========================================================================== */
+.avatar {
+    width: 90px;
+    height: 90px;
     background: #000;
-    display: inline-block;
-    padding: 20px 40px;
-    margin-top: 20px;
-    border: 2px dashed var(--primary-red);
-    font-size: 1.2rem;
-    color: #ffcccc;
-}
-
-/* Status Widget */
-.status-bar {
-    margin-top: 30px;
-    padding: 15px;
-    background: rgba(255, 0, 0, 0.05);
-    border-radius: 8px;
+    border: 2px solid var(--primary-red);
+    border-radius: 50%;
+    margin: 0 auto 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 15px;
+    font-size: 38px;
+    color: var(--primary-red);
+    box-shadow: var(--neon-shadow);
+    text-shadow: 0 0 8px var(--primary-red);
 }
 
-.status-dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: #555;
+h1 {
+    font-size: 26px;
+    color: #ffffff;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 10px rgba(255, 0, 0, 0.5);
 }
 
-/* Terms Page Styles */
-.post-content {
-    background: var(--card-bg);
-    padding: 40px;
-    border-radius: 10px;
-    border-left: 4px solid var(--primary-red);
+.tagline {
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffcccc;
+    letter-spacing: 0.5px;
+    background: rgba(255, 0, 0, 0.05);
+    padding: 8px 15px;
+    border-radius: 6px;
+    display: inline-block;
+    border: 1px dashed rgba(255, 0, 0, 0.3);
+    margin-bottom: 35px;
 }
 
-.post-content a { color: var(--primary-red); }
-hr { border: 0; border-top: 1px solid var(--dark-red); margin: 20px 0; }
-ul li { margin-bottom: 10px; border-left: 2px solid var(--primary-red); padding-left: 15px; list-style: none; }
+/* ==========================================================================
+   BOTONES Y ENLACES (Estilo Shop / HUD)
+   ========================================================================== */
+.links-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 35px;
+}
 
-/* Estilos para los iconos de redes sociales */
-.social-icon {
-    color: #ffffff; /* Blanco por defecto */
-    font-size: 1.2rem;
-    transition: all 0.3s ease;
+.card-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #000;
+    padding: 16px 20px;
+    border: 1px solid var(--primary-red);
+    border-radius: 4px;
     text-decoration: none;
+    color: #fff;
+    box-shadow: inset 0 0 5px var(--primary-red);
+    transition: all 0.3s ease;
+}
+
+.card-link:hover {
+    background: var(--primary-red);
+    color: #000 !important;
+    box-shadow: 0 0 20px var(--primary-red);
+    transform: translateY(-2px);
+}
+
+.card-content {
     display: flex;
     align-items: center;
+    gap: 14px;
 }
 
-.social-icon:hover {
-    color: var(--primary-red, #ff0000); /* Rojo al pasar el cursor */
-    transform: translateY(-2px); /* Pequeño salto animado */
+.card-content i {
+    font-size: 18px;
+    color: #ffcccc;
+    transition: color 0.3s;
 }
 
-/* Ajuste para que el nav no se amontone en móviles */
-@media (max-width: 600px) {
-    nav {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .social-nav {
-        margin-right: 0;
-        margin-bottom: 10px;
-        width: 100%;
-        justify-content: center;
-    }
+.card-link:hover .card-content i {
+    color: #000;
 }
+
+.card-link span {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.arrow {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.4);
+    transition: color 0.3s;
+}
+
+.card-link:hover .arrow {
+    color: #000;
+}
+
+/* Enlaces deshabilitados / Próximamente */
+.card-link.disabled {
+    opacity: 0.4;
+    border-color: var(--dark-red);
+    box-shadow: none;
+    pointer-events: none;
+}
+
+.badge {
+    background: var(--dark-red);
+    font-size: 11px;
+    font-family: 'Orbitron', sans-serif;

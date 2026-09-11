@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +14,9 @@
 </head>
 <body>
 
-  
+    <!-- Fondo de partículas dinámicas -->
+    <div id="particles"></div>
+
     <header class="main-header">
         <div class="logo">
             <h1>RoshFeel</h1>
@@ -27,35 +29,63 @@
 
     <main class="container">
         
-        
         <section class="hero">
             <div class="status-bar">
                 <span class="status-dot"></span>
                 <span class="status-text">RED SUPREMACY</span>
             </div>
-            <p>Content Creator & Gamer.</p>
+            <h2>RoshFeel</h2>
+            <p>Currently workin on RedChy.</p>
         </section>
 
-        
+        <!-- Redes / Hub Principal -->
         <section class="hub-grid">
-    <a href="https://youtube.com/@roshfeel" class="hub-card" target="_blank" rel="noopener">
-        <i class="fab fa-youtube"></i> YouTube
-    </a>
-    <a href="https://tiktok.com/@roshfeel" class="hub-card" target="_blank" rel="noopener">
-        <i class="fab fa-tiktok"></i> TikTok
-    </a>
-    <a href="https://instagram.com/rosh_feel/" class="hub-card" target="_blank" rel="noopener">
-        <i class="fab fa-instagram"></i> Instagram
-    </a>
-    <a href="https://www.roblox.com/es/users/3763343/profile" class="hub-card" target="_blank" rel="noopener">
-        <i class="fas fa-gamepad"></i> Roblox
-    </a>
-    <a href="https://x.com/roshfeel" class="hub-card" target="_blank" rel="noopener">
-        <i class="fab fa-x-twitter"></i> X (Twitter)
-    </a>
-</section>
+            <a href="https://youtube.com/@roshfeel" class="hub-card" target="_blank" rel="noopener">
+                <i class="fab fa-youtube"></i> YouTube
+            </a>
+            <a href="https://tiktok.com/@roshfeel" class="hub-card" target="_blank" rel="noopener">
+                <i class="fab fa-tiktok"></i> TikTok
+            </a>
+            <a href="https://instagram.com/rosh_feel/" class="hub-card" target="_blank" rel="noopener">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+            <a href="https://www.roblox.com/es/users/3763343/profile" class="hub-card" target="_blank" rel="noopener">
+                <i class="fas fa-gamepad"></i> Roblox
+            </a>
+            <a href="https://x.com/roshfeel" class="hub-card" target="_blank" rel="noopener">
+                <i class="fab fa-x-twitter"></i> X (Twitter)
+            </a>
+        </section>
+
+        <!-- Sección Útil: Arsenal Tecnológico / Intereses -->
+        <section class="arsenal-section">
+            <h3>Arsenal & Core Stack</h3>
+            <div class="tags-grid">
+                <span>Java / Kotlin</span>
+                <span>JavaScript / TypeScript</span>
+                <span>Node.js</span>
+                <span>Linux & VPS</span>
+                <span>Docker</span>
+                <span>Git & GitHub</span>
+            </div>
+        </section>
 
     </main>
 
+    <script>
+        // Generador dinámico de partículas rojas en el fondo
+        const particlesContainer = document.getElementById('particles');
+        const particleCount = 25;
+
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            particle.style.left = `${Math.random() * 100}vw`;
+            particle.style.top = `${Math.random() * 100}vh`;
+            particle.style.animationDuration = `${Math.random() * 5 + 3}s`;
+            particle.style.animationDelay = `${Math.random() * 2}s`;
+            particlesContainer.appendChild(particle);
+        }
+    </script>
 </body>
 </html>

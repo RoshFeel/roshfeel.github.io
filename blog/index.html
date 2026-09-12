@@ -1,1 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RoshFeel | Blog & Media</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
 
+    <div id="particles"></div>
+
+    <header class="main-header">
+        <div class="logo">
+            <h1>RoshFeel Blog</h1>
+        </div>
+        <nav class="navbar">
+            <a href="/" class="nav-link">Home</a>
+            <a href="/blog/" class="nav-link active">Blog</a>
+            <a href="/contact/" class="nav-link">Contact</a>
+            <a href="https://redchy.com" class="shop-btn" target="_blank" rel="noopener">REDCHY</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h2>Media Stream</h2>
+            <p>Upload videos, images and logs of updates.</p>
+
+            <!-- Panel de Creación / Subida (Ocultable o visible para administrar) -->
+            <div style="margin-top: 25px; text-align: left; background: rgba(0,0,0,0.4); padding: 20px; border-radius: 8px; border: 1px dashed rgba(255,0,60,0.4);">
+                <h3 style="font-size: 1rem; color: var(--primary-red); margin-bottom: 15px;"><i class="fas fa-upload"></i> Publicar Nuevo Contenido</h3>
+                <form id="upload-form" class="roshfeel-form" style="margin-top: 10px;">
+                    <div class="form-group">
+                        <label for="post-title">Título:</label>
+                        <input type="text" id="post-title" required placeholder="Título del video o imagen">
+                    </div>
+                    <div class="form-group">
+                        <label for="post-desc">Descripción:</label>
+                        <textarea id="post-desc" rows="2" required placeholder="Detalles o notas..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="post-url">URL del Elemento (Imagen, Video o Enlace MP4/YouTube):</label>
+                        <input type="url" id="post-url" required placeholder="https://...">
+                    </div>
+                    <button type="submit" class="submit-btn">Subir al Blog</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Contenedor dinámico donde se cargan las publicaciones -->
+        <section class="blog-grid" id="blog-posts-container">
+            <!-- Las publicaciones se cargan automáticamente aquí por JavaScript -->
+        </section>
+    </main>
+
+    <script>
+        // Lógica para manejar las publicaciones y almacenamiento local (LocalStorage)
+        const form = document.getElementById('upload-form');
+        const container = document.getElementById('blog-posts-container');
+
+        // Datos iniciales de ejemplo si está vacío
+        let posts = JSON.parse(localStorage.getItem('roshfeel_posts')) || [
+            {
+                title: "Inauguración de RedChy",
+                description: "Primer vistazo a los nuevos desarrollos y ecosistema tecnológico.",
+                url: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop",
+                date: "10 de Septiembre, 2026"
+            }
+        ];
+
+        function renderPosts() {
+            container.innerHTML = '';
+            posts.forEach(post => {
+                const card = document.createElement('div');
+                card.className = 'blog-card';
+                card.innerHTML = `
+                    <img src="${post.url}" class="blog-media" alt="${post.title}" onerror="this.src='https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=800&auto=format&fit=crop'">
+                    <div class="blog-content">
+                        <span class="blog-date"><i class="far fa-calendar-alt"></i> ${post.date}</span>
+                        <h3>${post.title}</h3>
+                        <p>${post.description}</p>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const title = document.getElementById('post-title').value;
+            const description = document.getElementById('post-desc').value;
+            const url = document.getElementById('post-url').value;
+
+            // Obtener fecha actual formateada
+            const now = new Date();
+            const options = { day: 'numeric', month: 'long', year: 'numeric' };
+            const dateStr = now.toLocaleDateString('es-ES', options);
+
+            const newPost = { title, description, url, date: dateStr };
+            posts.unshift(newPost); // Agregar al inicio
+            localStorage.setItem('roshfeel_posts', JSON.stringify(posts));
+
+            renderPosts();
+            form.reset();
+        });
+
+        renderPosts();
+
+        // Fondo de partículas
+        const particlesContainer = document.getElementById('particles');
+        const particleCount = 25;
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            particle.style.left = `${Math.random() * 100}vw`;
+            particle.style.top = `${Math.random() * 100}vh`;
+            particle.style.animationDuration = `${Math.random() * 5 + 3}s`;
+            particle.style.animationDelay = `${Math.random() * 2}s`;
+            particlesContainer.appendChild(particle);
+        }
+    </script>
+</body>
+</html>

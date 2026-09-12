@@ -249,3 +249,64 @@ nav a:hover, nav a.active, .nav-link:hover, .nav-link.active {
         gap: 15px;
     }
 }
+
+/* --- ESTILOS DEL FORMULARIO DE CONTACTO --- */
+.contact-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.roshfeel-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.form-group input, 
+.form-group textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+    outline: none;
+    border-color: #333; /* Cambia este color por el color principal de tu marca */
+}
+
+.submit-btn {
+    padding: 12px 24px;
+    background-color: #111; /* Color del botón */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.submit-btn:hover {
+    background-color: #333;
+}
+
+.submit-btn:active {
+    transform: scale(0.98);
+}

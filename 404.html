@@ -5,25 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página no encontrada - RoshFeel</title>
     <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- Menú de navegación global (Header) -->
-    <nav class="navbar">
-        <a href="/" class="nav-link">Home</a>
-        <link rel="stylesheet" href="/blog/">
-        <a href="/blog/" class="nav-link">Blog</a>
-        <a href="/contact/" class="nav-link">Contact</a>
-        <a href="https://redchy.com" class="shop-btn" target="_blank" rel="noopener">REDCHY</a>
-    </nav>
+    <div id="particles"></div>
 
-    <!-- Contenido principal de la página 404 -->
-    <main class="container" style="text-align: center; padding: 80px 20px;">
-        <h1 style="font-size: 4rem; color: var(--accent-color, #ff003c); margin-bottom: 20px;">404</h1>
-        <h2 style="margin-bottom: 15px;">Vaya, te has perdido en el sistema</h2>
-        <p style="color: #a0a0a0; margin-bottom: 30px;">La página que buscas no existe o ha sido movida a otra ruta.</p>
-        <a href="/" class="shop-btn" style="display: inline-block; padding: 12px 30px; text-decoration: none;">Volver al Inicio</a>
+    <header class="main-header">
+        <div class="logo">
+            <h1>RoshFeel</h1>
+        </div>
+        <nav class="navbar">
+            <a href="/" class="nav-link">Home</a>
+            <a href="/blog/" class="nav-link">Blog</a>
+            <a href="/contact/" class="nav-link">Contact</a>
+            <a href="https://redchy.com" class="shop-btn" target="_blank" rel="noopener">REDCHY</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="hero" style="padding: 60px 20px;">
+            <h1 style="font-size: 5rem; color: var(--primary-red); margin: 0 0 10px 0; text-shadow: 0 0 20px rgba(255,0,60,0.8);">404</h1>
+            <h2 style="margin-bottom: 15px; color: #fff;">Vaya, te has perdido en el sistema</h2>
+            <p style="color: #cccccc; margin-bottom: 30px;">La página que buscas no existe o ha sido movida a otra ruta.</p>
+            <a href="/" class="shop-btn" style="display: inline-block; padding: 12px 30px; text-decoration: none;">Volver al Inicio</a>
+        </section>
     </main>
 
+    <script>
+        const particlesContainer = document.getElementById('particles');
+        const particleCount = 25;
+
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            particle.style.left = `${Math.random() * 100}vw`;
+            particle.style.top = `${Math.random() * 100}vh`;
+            particle.style.animationDuration = `${Math.random() * 5 + 3}s`;
+            particle.style.animationDelay = `${Math.random() * 2}s`;
+            particlesContainer.appendChild(particle);
+        }
+    </script>
 </body>
 </html>

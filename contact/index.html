@@ -4,43 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto | Roshfeel</title>
-    <!-- Enlazamos tu CSS principal (subiendo un nivel con ../) -->
+    <!-- Enlazamos tu CSS principal subiendo un nivel -->
     <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <header>
-        <!-- Aquí puedes poner el mismo menú de navegación que tienes en tu index principal -->
-        <nav>
-            <a href="/">← Volver al inicio</a>
+    <!-- Fondo de partículas dinámicas -->
+    <div id="particles"></div>
+
+    <header class="main-header">
+        <div class="logo">
+            <h1>RoshFeel</h1>
+        </div>
+        <nav class="navbar">
+            <a href="/" class="nav-link">Home</a>
+            <a href="/contact/" class="nav-link active">Contacto</a>
+            <a href="https://redchy.com" class="shop-btn" target="_blank" rel="noopener">REDCHY</a>
         </nav>
     </header>
 
-    <main class="contact-container">
-        <h1>Ponte en contacto</h1>
-        <p>¿Tienes alguna idea o proyecto en mente? Escríbeme y hablemos.</p>
+    <main class="container contact-container">
+        <section class="hero">
+            <h2>Ponte en contacto</h2>
+            <p>¿Tienes alguna idea o proyecto en mente? Escríbeme y hablemos.</p>
 
-        <!-- Formulario de Formspree -->
-        <form action="https://formspree.io/f/myeyvqbe" method="POST" class="roshfeel-form">
-            
-            <div class="form-group">
-                <label for="name">Nombre:</label>
-                <input type="text" id="name" name="name" required placeholder="Tu nombre o nickname">
-            </div>
+            <!-- Formulario de Formspree -->
+            <form action="https://formspree.io/f/myeyvqbe" method="POST" class="roshfeel-form">
+                
+                <div class="form-group">
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="name" required placeholder="Tu nombre o nickname">
+                </div>
 
-            <div class="form-group">
-                <label for="email">Mail:</label>
-                <input type="email" id="email" name="email" required placeholder="tu@correo.com">
-            </div>
+                <div class="form-group">
+                    <label for="email">Mail:</label>
+                    <input type="email" id="email" name="email" required placeholder="tu@correo.com">
+                </div>
 
-            <div class="form-group">
-                <label for="message">Mensaje:</label>
-                <textarea id="message" name="message" rows="5" required placeholder="Que me quieres decir..."></textarea>
-            </div>
+                <div class="form-group">
+                    <label for="message">Mensaje:</label>
+                    <textarea id="message" name="message" rows="5" required placeholder="Que me quieres decir..."></textarea>
+                </div>
 
-            <button type="submit" class="submit-btn">Enviar</button>
-        </form>
+                <button type="submit" class="submit-btn">Enviar</button>
+            </form>
+        </section>
     </main>
 
+    <script>
+        // Generador dinámico de partículas rojas en el fondo
+        const particlesContainer = document.getElementById('particles');
+        const particleCount = 25;
+
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            particle.style.left = `${Math.random() * 100}vw`;
+            particle.style.top = `${Math.random() * 100}vh`;
+            particle.style.animationDuration = `${Math.random() * 5 + 3}s`;
+            particle.style.animationDelay = `${Math.random() * 2}s`;
+            particlesContainer.appendChild(particle);
+        }
+    </script>
 </body>
 </html>

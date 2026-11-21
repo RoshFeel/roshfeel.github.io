@@ -25,29 +25,66 @@
     </header>
 
     <main class="container contact-container">
-        <section class="hero">
-            <h2>MSG</h2>
-            <p>Get in touch with me</p>
+        <div class="contact-layout">
 
-            <form action="https://formspree.io/f/myeyvqbe" method="POST" class="roshfeel-form">
-                <div class="form-group">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required placeholder="Name/internet identity">
-                </div>
+            <!-- Columna izquierda: contactos -->
+            <section class="hero contact-col">
+                <h2>Contacts</h2>
+                <ul class="contact-list">
+                    <li>
+                        <a href="https://youtube.com/@roshfeel" target="_blank" rel="noopener">
+                            <i class="fab fa-youtube"></i><span>YouTube</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://tiktok.com/@roshfeel" target="_blank" rel="noopener">
+                            <i class="fab fa-tiktok"></i><span>TikTok</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://instagram.com/rosh_feel/" target="_blank" rel="noopener">
+                            <i class="fab fa-instagram"></i><span>Instagram</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.roblox.com/es/users/3763343/profile" target="_blank" rel="noopener">
+                            <i class="fas fa-gamepad"></i><span>Roblox</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://x.com/roshfeel" target="_blank" rel="noopener">
+                            <i class="fab fa-x-twitter"></i><span>X (Twitter)</span>
+                        </a>
+                    </li>
+                </ul>
+            </section>
 
-                <div class="form-group">
-                    <label for="email">Mail:</label>
-                    <input type="email" id="email" name="email" required placeholder="mail@example.com">
-                </div>
+            <!-- Columna derecha: formulario -->
+            <section class="hero contact-col">
+                <h2>MSG</h2>
+                <p>Get in touch with me</p>
 
-                <div class="form-group">
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" rows="5" required placeholder="your desire..."></textarea>
-                </div>
+                <form action="https://formspree.io/f/myeyvqbe" method="POST" class="roshfeel-form">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required placeholder="Name/internet identity">
+                    </div>
 
-                <button type="submit" class="submit-btn">Submit</button>
-            </form>
-        </section>
+                    <div class="form-group">
+                        <label for="email">Mail:</label>
+                        <input type="email" id="email" name="email" required placeholder="mail@example.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="your desire..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Submit</button>
+                </form>
+            </section>
+
+        </div>
     </main>
 
     <script>

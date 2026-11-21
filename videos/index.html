@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RoshFeel | Videos</title>
+    <meta name="description" content="Videos de RoshFeel en mejor calidad, con enlace de descarga.">
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div id="particles"></div>
+
+    <header class="main-header">
+        <div class="logo">
+            <h1>RoshFeel</h1>
+        </div>
+        <nav class="navbar">
+            <a href="/" class="nav-link">Home</a>
+            <a href="/videos/" class="nav-link active">Videos</a>
+            <a href="/contact/" class="nav-link">Contact</a>
+            <a href="https://redchy.com" class="shop-btn" target="_blank" rel="noopener">REDCHY</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h2>You'll find my videos here in better quality</h2>
+            <p>You can also download them.</p>
+        </section>
+
+        <!-- Videos: el más nuevo va primero.
+             Para agregar uno nuevo, copia una tarjeta completa (de <div class="blog-card"> a su </div> final)
+             y pégala justo debajo de este comentario. -->
+        <section class="blog-grid" id="blog-posts-container">
+
+            <div class="blog-card">
+                <div class="video-frame">
+                    <iframe src="https://www.youtube-nocookie.com/embed/MCM188KlCYc" title="Cómo configurar un dominio en tu servidor de Minecraft" loading="lazy" allowfullscreen></iframe>
+                </div>
+                <div class="blog-content">
+                    <span class="blog-date"><i class="far fa-calendar-alt"></i> 20/11/2026</span>
+                    <h3>Cómo configurar un dominio en tu servidor de Minecraft</h3>
+                    <a class="download-btn" href="https://drive.google.com/file/d/1aBVcywOPK-z4jgYdKGbCzcoYGc0Q1z3b/view?usp=sharing" target="_blank" rel="noopener"><i class="fas fa-download"></i> Download</a>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <div class="video-frame">
+                    <iframe src="https://www.youtube-nocookie.com/embed/1waF-QXndi0" title="Así puedes tener un servidor 24/7 sin gastar una fortuna" loading="lazy" allowfullscreen></iframe>
+                </div>
+                <div class="blog-content">
+                    <span class="blog-date"><i class="far fa-calendar-alt"></i> 18/11/2026</span>
+                    <h3>Así puedes tener un servidor 24/7 sin gastar una fortuna</h3>
+                    <a class="download-btn" href="https://drive.google.com/file/d/13bWZ_MEmTFi16MDDA964_xSqgGOSDghD/view?usp=sharing" target="_blank" rel="noopener"><i class="fas fa-download"></i> Download</a>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <div class="video-frame">
+                    <iframe src="https://www.youtube-nocookie.com/embed/qzKzVr_hDgU" title="Cómo jugar con gente en mi servidor RedChy" loading="lazy" allowfullscreen></iframe>
+                </div>
+                <div class="blog-content">
+                    <span class="blog-date"><i class="far fa-calendar-alt"></i> 28/08/2026</span>
+                    <h3>Cómo jugar con gente en mi servidor RedChy</h3>
+                    <p>Minecraft RedChy's Discord: <a class="text-link" href="https://discord.redchy.com" target="_blank" rel="noopener">discord.redchy.com</a></p>
+                    <a class="download-btn" href="https://drive.google.com/file/d/1N7PNESli9HLeFz1LJ6biNJl_jUfYqkht/view?usp=sharing" target="_blank" rel="noopener"><i class="fas fa-download"></i> Download</a>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <div class="video-frame">
+                    <iframe src="https://www.youtube-nocookie.com/embed/XWFxJA2ectg" title="MURDER MYSTERY 2 #2 - SUMMER 2026" loading="lazy" allowfullscreen></iframe>
+                </div>
+                <div class="blog-content">
+                    <span class="blog-date"><i class="far fa-calendar-alt"></i> 30/07/2026</span>
+                    <h3>MURDER MYSTERY 2 #2 - SUMMER 2026</h3>
+                    <a class="download-btn" href="https://drive.google.com/file/d/1HayOSmJdzgcvZF15QAJpw_1PoquuBvQY/view?usp=sharing" target="_blank" rel="noopener"><i class="fas fa-download"></i> Download</a>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <div class="video-frame">
+                    <iframe src="https://www.youtube-nocookie.com/embed/DX2qYXmuwcM" title="MURDER MYSTERY 2 #1" loading="lazy" allowfullscreen></iframe>
+                </div>
+                <div class="blog-content">
+                    <span class="blog-date"><i class="far fa-calendar-alt"></i> 17/06/2026</span>
+                    <h3>MURDER MYSTERY 2 #1</h3>
+                    <a class="download-btn" href="https://drive.google.com/file/d/1_kuhGqA5jTgK1CjaclesmdCKPH5vylm2/view?usp=sharing" target="_blank" rel="noopener"><i class="fas fa-download"></i> Download</a>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <script>
+        // Fondo de partículas estético
+        const particlesContainer = document.getElementById('particles');
+        const particleCount = 25;
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            particle.style.left = `${Math.random() * 100}vw`;
+            particle.style.top = `${Math.random() * 100}vh`;
+            particle.style.animationDuration = `${Math.random() * 5 + 3}s`;
+            particle.style.animationDelay = `${Math.random() * 2}s`;
+            particlesContainer.appendChild(particle);
+        }
+    </script>
+</body>
+</html>
